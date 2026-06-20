@@ -23,7 +23,7 @@ const smoothstep = (a, b, x) => {
   return t * t * (3 - 2 * t);
 };
 
-export function ParticleField({ chapters, particleCount = 8000, isAmbient }) {
+export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMobile }) {
   const meshRef = useRef(null);
   const materialRef = useRef(null);
 
@@ -32,7 +32,10 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient }) {
   // `aTargetB` (per-chapter targets), and `aIndex`/`aRandom` (per-particle
   // seeds for shimmer and twinkle).
   const geometry = useMemo(() => {
-    const geo = new THREE.IcosahedronGeometry(0.16, 1);
+    // Mobile optimization: Detail 0 = 20 faces. Detail 1 = 80 faces.
+    // This prevents iOS Safari from instantly killing the WebGL context.
+    const detail = isMobile ? 0 : 1;
+    const geo = new THREE.IcosahedronGeometry(0.16, detail);
 
     // Base position: a flat panel grid. The shader morphs *toward*
     // aTargetA, so this acts as the "settle from" pose.
@@ -73,7 +76,7 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient }) {
     // can read it without re-deriving it.
     geo.userData.allTargets = allTargets;
     return geo;
-  }, [chapters, particleCount]);
+  }, [chapters, particleCount, isMobile]);
 
   // Cached THREE.Color objects we mutate in place per frame to avoid GC.
   const colorScratch = useMemo(
