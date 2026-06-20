@@ -597,18 +597,24 @@ img {
 }
 
 .product-card__image {
-  background: rgba(255, 255, 255, 0.03);
-  height: 250px;
+  background: #fcfcfc;
+  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 2.5rem;
+  border-bottom: 1px solid var(--hairline);
 }
 
 .product-card__image img {
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.08);
 }
 
 .product-card__content {
@@ -648,20 +654,19 @@ img {
 }
 
 .product-gallery__main {
-  background: var(--bg-glass);
-  border: 1px solid var(--hairline);
-  backdrop-filter: blur(14px);
+  background: #fcfcfc;
   border-radius: 16px;
   padding: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
+  height: 450px;
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.02), 0 20px 40px rgba(0,0,0,0.4);
 }
 .product-gallery__main img {
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
 }
 
 .product-gallery__thumbs {
@@ -672,8 +677,8 @@ img {
 }
 
 .product-gallery__thumb {
-  background: var(--bg-glass);
-  border: 1px solid var(--hairline);
+  background: #fcfcfc;
+  border: 2px solid transparent;
   border-radius: 8px;
   padding: 1rem;
   min-width: 100px;
@@ -682,11 +687,13 @@ img {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .product-gallery__thumb:hover {
   border-color: var(--brand);
+  transform: translateY(-2px);
 }
 .product-gallery__thumb img {
   max-height: 100%;
@@ -758,10 +765,10 @@ img {
 .spec-table-wrapper {
   overflow-x: auto;
   background: var(--bg-glass);
-  backdrop-filter: blur(14px);
-  border-radius: 12px;
-  border: 1px solid var(--hairline);
-  padding: 1rem;
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid var(--hairline-strong);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .spec-table {
@@ -772,29 +779,39 @@ img {
 }
 
 .spec-table th, .spec-table td {
-  padding: 1rem;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--hairline);
+}
+
+.spec-table tbody tr {
+  transition: background 0.2s ease;
+}
+.spec-table tbody tr:hover {
+  background: var(--bg-glass-strong);
 }
 
 .spec-table th {
   font-weight: 700;
-  color: var(--fg);
-  background: var(--bg-glass);
+  color: #fff;
+  background: rgba(255,255,255,0.03);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .spec-table .category-header {
-  background: rgba(227, 30, 36, 0.1);
-  color: var(--brand);
-  font-weight: 700;
+  background: rgba(227, 30, 36, 0.15);
+  color: var(--accent-warm);
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
 }
 
 .spec-table .spec-label {
   font-weight: 600;
   color: var(--fg-muted);
-  width: 25%;
+  width: 30%;
 }
 
 .empty-specs {

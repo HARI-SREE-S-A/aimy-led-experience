@@ -23,7 +23,7 @@ const smoothstep = (a, b, x) => {
   return t * t * (3 - 2 * t);
 };
 
-export function ParticleField({ chapters, particleCount = 8000 }) {
+export function ParticleField({ chapters, particleCount = 8000, isAmbient }) {
   const meshRef = useRef(null);
   const materialRef = useRef(null);
 
@@ -128,7 +128,13 @@ export function ParticleField({ chapters, particleCount = 8000 }) {
     if (!mesh || !mat) return;
 
     const t = state.clock.elapsedTime;
-    const { progress, chapter, chapterProgress, intro, outro } = useScrollStore.getState();
+    let { progress, chapter, chapterProgress, intro, outro } = useScrollStore.getState();
+
+    if (isAmbient) {
+      chapterProgress = 0;
+      intro = 1;
+      outro = 0;
+    }
 
     const nextChapter = Math.min(chapter + 1, chapters.length - 1);
     const hasNext = nextChapter !== chapter;
@@ -155,9 +161,9 @@ export function ParticleField({ chapters, particleCount = 8000 }) {
     attrA.needsUpdate = true;
     attrB.needsUpdate = true;
 
-    const morphA = smoothstep(0.0, 0.15, chapterProgress);
-    const morphB = hasNext ? smoothstep(0.5, 1.0, chapterProgress) : 0.0;
-    const dispersion = hasNext ? Math.sin(chapterProgress * Math.PI) : 0.0;
+    const morphA = isAmbient ? 1.0 : smoothstep(0.0, 0.15, chapterProgress);
+    const morphB = (hasNext && !isAmbient) ? smoothstep(0.5, 1.0, chapterProgress) : 0.0;
+    const dispersion = (hasNext && !isAmbient) ? Math.sin(chapterProgress * Math.PI) : 0.0;
 
     mat.uniforms.uTime.value = t;
     mat.uniforms.uMorphA.value = morphA;
@@ -173,7 +179,7 @@ export function ParticleField({ chapters, particleCount = 8000 }) {
     // feel like a smooth light-show transition.
     const curr = palettes[chapter];
     const next = palettes[nextChapter] || curr;
-    const blend = hasNext ? smoothstep(0.4, 0.9, chapterProgress) : 0;
+    const blend = (hasNext && !isAmbient) ? smoothstep(0.4, 0.9, chapterProgress) : 0;
     colorScratch.a.copy(curr.a).lerp(next.a, blend);
     colorScratch.b.copy(curr.b).lerp(next.b, blend);
     colorScratch.c.copy(curr.c).lerp(next.c, blend);
@@ -187,9 +193,9 @@ export function ParticleField({ chapters, particleCount = 8000 }) {
 
     // Slow whole-scene rotation driven by overall scroll progress —
     // gives the impression of looking around the panel as you read.
-    const slowRot = progress * Math.PI * 0.6;
-    mesh.rotation.y = Math.sin(slowRot) * 0.25;
-    mesh.rotation.x = Math.cos(slowRot * 0.7) * 0.1;
+    const rotSpeed = isAmbient ? (t * 0.05) : (progress * Math.PI * 0.6);
+    mesh.rotation.y = Math.sin(rotSpeed) * 0.25;
+    mesh.rotation.x = Math.cos(rotSpeed * 0.7) * 0.1;
   });
 
   useEffect(() => {
