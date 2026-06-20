@@ -7,24 +7,20 @@ import ProductsCatalog from './ui/ProductsCatalog';
 import ProductDetail from './ui/ProductDetail';
 
 function Home() {
+  return <Overlay />;
+}
+
+export default function App() {
   return (
-    <>
-      <div className="scene-canvas">
+    <BrowserRouter>
+      <div className="scene-canvas" style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
         <ErrorBoundary>
           <Suspense fallback={null}>
             <Scene />
           </Suspense>
         </ErrorBoundary>
       </div>
-      <Overlay />
-    </>
-  );
-}
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <div className="app">
+      <div className="app" style={{ position: 'relative', zIndex: 10 }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductsCatalog />} />
