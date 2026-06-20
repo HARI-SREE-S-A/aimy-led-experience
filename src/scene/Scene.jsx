@@ -18,8 +18,8 @@ export function Scene({ isAmbient }) {
 
   if (isMobile === null) return null;
 
-  const particleCount = isMobile ? 2000 : 8000;
-  const dpr = isMobile ? [1, 1.2] : [1, 2];
+  const particleCount = isMobile ? 1500 : 8000;
+  const dpr = isMobile ? [1, 1] : [1, 2];
 
   return (
     <Canvas
@@ -29,7 +29,7 @@ export function Scene({ isAmbient }) {
     >
       <color attach="background" args={['#050505']} />
       <ParticleField chapters={chapters} particleCount={particleCount} isAmbient={isAmbient} isMobile={isMobile} />
-      <Effects />
+      <Effects isMobile={isMobile} />
     </Canvas>
   );
 }

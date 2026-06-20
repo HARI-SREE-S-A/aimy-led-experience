@@ -7,7 +7,22 @@ import { Vector2 } from 'three';
 //   ChromaticAberration → subtle red/blue lens fringe
 //   Vignette      → cinematic darkening at edges
 //   Noise         → film grain so the dark areas don't band
-export function Effects() {
+export function Effects({ isMobile }) {
+  if (isMobile) {
+    // Ultra-light post-processing for mobile:
+    // No MSAA, no mipmap blur, bare minimum bloom to maintain the LED look
+    // without killing the mobile GPU.
+    return (
+      <EffectComposer disableNormalPass multisampling={0}>
+        <Bloom 
+          luminanceThreshold={0.3} 
+          luminanceSmoothing={0.9} 
+          intensity={1.2} 
+        />
+      </EffectComposer>
+    );
+  }
+
   return (
     <EffectComposer disableNormalPass multisampling={4}>
       <Bloom 
