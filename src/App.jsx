@@ -15,7 +15,7 @@ function SceneWrapper() {
   const isAmbient = location.pathname !== '/';
   
   return (
-    <div className="scene-canvas" style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+    <div className="scene-canvas" style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
       <ErrorBoundary>
         <Suspense fallback={null}>
           <Scene isAmbient={isAmbient} />

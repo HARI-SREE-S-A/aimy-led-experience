@@ -99,7 +99,6 @@ img {
   position: relative;
   width: 100%;
   height: 800vh;
-  pointer-events: none;
   z-index: 1;
 }
 
@@ -109,7 +108,6 @@ img {
   display: flex;
   align-items: center;
   padding: 0 6vw;
-  pointer-events: none;
 }
 
 .chapter--right {
