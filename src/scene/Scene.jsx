@@ -5,7 +5,7 @@ import { Effects } from './Effects';
 import { chapters } from '../content/chapters';
 
 export function Scene({ isAmbient }) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -16,8 +16,10 @@ export function Scene({ isAmbient }) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const particleCount = isMobile ? 2500 : 8000;
-  const dpr = isMobile ? [1, 1.5] : [1, 2];
+  if (isMobile === null) return null;
+
+  const particleCount = isMobile ? 2000 : 8000;
+  const dpr = isMobile ? [1, 1.2] : [1, 2];
 
   return (
     <Canvas

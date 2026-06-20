@@ -1,50 +1,5 @@
 [
   {
-    "id": "3509",
-    "slug": "sr-executive-assistant-manager-retail-lighting",
-    "name": "SR. EXECUTIVE/ASSISTANT MANAGER – RETAIL LIGHTING",
-    "categoryGroup": "Essentials",
-    "image_url": "",
-    "gallery": [],
-    "models": [
-      {
-        "wattage": "Various Options",
-        "warranty": "1-2 Years",
-        "specs": {}
-      }
-    ]
-  },
-  {
-    "id": "3532",
-    "slug": "lighting-installation-technician",
-    "name": "Lighting Installation Technician",
-    "categoryGroup": "Essentials",
-    "image_url": "",
-    "gallery": [],
-    "models": [
-      {
-        "wattage": "Various Options",
-        "warranty": "1-2 Years",
-        "specs": {}
-      }
-    ]
-  },
-  {
-    "id": "3539",
-    "slug": "merchandiser-hardgoods-furniture-home-decor-lighting",
-    "name": "Merchandiser ( Hardgoods- Furniture, Home Décor, Lighting )",
-    "categoryGroup": "Essentials",
-    "image_url": "",
-    "gallery": [],
-    "models": [
-      {
-        "wattage": "Various Options",
-        "warranty": "1-2 Years",
-        "specs": {}
-      }
-    ]
-  },
-  {
     "id": "4883",
     "slug": "bulb-series",
     "name": "Bulb Series",
