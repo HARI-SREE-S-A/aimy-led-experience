@@ -12,7 +12,7 @@ export function Effects({ isMobile }) {
   }
 
   return (
-    <EffectComposer disableNormalPass multisampling={0}>
+    <EffectComposer disableNormalPass>
       <Bloom 
         luminanceThreshold={0.2} 
         luminanceSmoothing={0.9} 

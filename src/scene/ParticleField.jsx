@@ -106,7 +106,6 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
       uColorBase: { value: new THREE.Color(CHAPTER_PALETTES[0].base) },
       uIntensity: { value: 1.0 },
       uChaseStrength: { value: 0.5 },
-      uSize: { value: 1.0 },
       uPixelRatio: { value: 1.0 },
     }),
     []
