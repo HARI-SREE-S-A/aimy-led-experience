@@ -7,7 +7,7 @@ export class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
+    return { hasError: true, error };
   }
 
   componentDidCatch(error, errorInfo) {
@@ -16,8 +16,13 @@ export class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      // Return null or a fallback 2D background if WebGL completely fails
-      return null;
+      // Return a visible error instead of null so we can debug "black screen" issues
+      return (
+        <div style={{ color: 'red', background: 'black', padding: '2rem', zIndex: 9999, position: 'relative' }}>
+          <h2>WebGL Crash</h2>
+          <p>{this.state.error?.message}</p>
+        </div>
+      );
     }
     return this.props.children;
   }
