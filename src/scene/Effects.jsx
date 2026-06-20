@@ -4,23 +4,11 @@ import { Vector2 } from 'three';
 
 // Post-processing stack — the signature LED look:
 //   Bloom         → makes bright pixels glow into halos
-//   ChromaticAberration → subtle red/blue lens fringe
-//   Vignette      → cinematic darkening at edges
-//   Noise         → film grain so the dark areas don't band
 export function Effects({ isMobile }) {
   if (isMobile) {
-    // Ultra-light post-processing for mobile:
-    // No MSAA, no mipmap blur, bare minimum bloom to maintain the LED look
-    // without killing the mobile GPU.
-    return (
-      <EffectComposer disableNormalPass multisampling={0}>
-        <Bloom 
-          luminanceThreshold={0.3} 
-          luminanceSmoothing={0.9} 
-          intensity={1.2} 
-        />
-      </EffectComposer>
-    );
+    // Ultra-light post-processing is STILL too heavy for older phones.
+    // Disabling completely for buttery smooth 60fps.
+    return null;
   }
 
   return (

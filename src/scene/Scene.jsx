@@ -18,7 +18,7 @@ export function Scene({ isAmbient }) {
 
   if (isMobile === null) return null;
 
-  const particleCount = isMobile ? 1500 : 8000;
+  const particleCount = isMobile ? 600 : 8000;
   const dpr = isMobile ? [1, 1] : [1, 2];
 
   return (

@@ -154,6 +154,7 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
       attrA.needsUpdate = true;
       attrB.needsUpdate = true;
       mesh.userData.lastChapter = chapter;
+      mesh.userData.lastNextChapter = nextChapter;
     }
 
     const morphA = isAmbient ? 1.0 : smoothstep(0.0, 0.15, chapterProgress);
