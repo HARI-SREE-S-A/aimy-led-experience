@@ -516,7 +516,8 @@ img {
     padding: 1rem 1.25rem;
   }
   .brand-bar__legacy {
-    display: none;
+    font-size: 0.6rem;
+    padding: 0.4rem 0.6rem;
   }
 }
 
