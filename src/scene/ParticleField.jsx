@@ -99,6 +99,7 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
       uChapterProgress: { value: 0 },
       uIntro: { value: 0 },
       uOutro: { value: 0 },
+      uSize: { value: isMobile ? 1.6 : 1.0 },
       uColorA: { value: new THREE.Color(CHAPTER_PALETTES[0].a) },
       uColorB: { value: new THREE.Color(CHAPTER_PALETTES[0].b) },
       uColorC: { value: new THREE.Color(CHAPTER_PALETTES[0].c) },
@@ -184,7 +185,11 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
     mat.uniforms.uColorB.value.copy(colorScratch.b);
     mat.uniforms.uColorC.value.copy(colorScratch.c);
     mat.uniforms.uColorBase.value.copy(colorScratch.base);
-    mat.uniforms.uIntensity.value = THREE.MathUtils.lerp(curr.intensity, next.intensity, blend);
+    // On mobile, because we disabled Bloom post-processing, the particles appear very dark and tiny.
+    // We manually multiply the intensity by 3.5 to fake the glowing halo effect directly in the shader.
+    let baseIntensity = THREE.MathUtils.lerp(curr.intensity, next.intensity, blend);
+    if (isMobile) baseIntensity *= 3.5;
+    mat.uniforms.uIntensity.value = baseIntensity;
     mat.uniforms.uChaseStrength.value = THREE.MathUtils.lerp(curr.chase, next.chase, blend);
 
     // Slow whole-scene rotation driven by overall scroll progress —

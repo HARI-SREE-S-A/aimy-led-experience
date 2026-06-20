@@ -502,6 +502,9 @@ img {
     max-width: 100%;
     padding: 1.5rem 1.5rem;
     border-radius: 14px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(10, 10, 10, 0.95);
   }
   .chapter__stats {
     gap: 1.25rem;
