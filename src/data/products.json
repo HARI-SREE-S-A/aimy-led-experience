@@ -1,0 +1,556 @@
+[
+  {
+    "id": "3509",
+    "slug": "sr-executive-assistant-manager-retail-lighting",
+    "name": "SR. EXECUTIVE/ASSISTANT MANAGER – RETAIL LIGHTING",
+    "categoryGroup": "Essentials",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "3532",
+    "slug": "lighting-installation-technician",
+    "name": "Lighting Installation Technician",
+    "categoryGroup": "Essentials",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "3539",
+    "slug": "merchandiser-hardgoods-furniture-home-decor-lighting",
+    "name": "Merchandiser ( Hardgoods- Furniture, Home Décor, Lighting )",
+    "categoryGroup": "Essentials",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4883",
+    "slug": "bulb-series",
+    "name": "Bulb Series",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4885",
+    "slug": "flood-series",
+    "name": "Flood Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4887",
+    "slug": "junction-lights",
+    "name": "Junction Lights",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4889",
+    "slug": "moonlight",
+    "name": "MoonLight",
+    "categoryGroup": "Decorative & Landscape",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4900",
+    "slug": "economical-flood-series",
+    "name": "Economical Flood Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4902",
+    "slug": "economic-pc-street-light",
+    "name": "Economic PC Street Light",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4906",
+    "slug": "spot-light",
+    "name": "Spot Light",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "4937",
+    "slug": "spot-lights",
+    "name": "Spot Lights",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "specs": {
+          "ELECTRICAL DATA": {
+            "Input Voltage": "230 VAC",
+            "Power Factor": " &gt;0.90",
+            "Total Harmonic Distortion (THD)": "N/A",
+            "Surge Protection": "N/A",
+            "Efficiency (%)": " 90%",
+            "Color Rendering Index (CRI)": "&gt;80"
+          },
+          "PHOTO NUMERICAL DATA": {
+            "CCT": "Cool : 6000K - 6500K <br /> Warm : 2700K - 3200K",
+            "Rated Flux": " 85LM",
+            "Beam Angle": "40 Degree"
+          },
+          "MECHANICAL DATA": {
+            "Net weight": "14g",
+            "IP Rating": "N/A",
+            "Material": "Die cast Aluminum ",
+            "Available Colors": "Cool / Warm / Red / Green / Blue / Pink"
+          }
+        },
+        "category": "Spot Lights",
+        "modelCode": "ATM1",
+        "shapes": "Round &amp; Square",
+        "warranty": "1 Year",
+        "mrp": "₹180",
+        "wattage": "1W"
+      },
+      {
+        "specs": {
+          "ELECTRICAL DATA": {
+            "Input Voltage": "230 VAC",
+            "Power Factor": " &gt;0.90",
+            "Total Harmonic Distortion (THD)": "N/A",
+            "Surge Protection": "N/A",
+            "Efficiency (%)": " 90%",
+            "Color Rendering Index (CRI)": "&gt;80"
+          },
+          "PHOTO NUMERICAL DATA": {
+            "CCT": "Cool : 6000K - 6500K <br /> Warm : 2700K - 3200K",
+            "Rated Flux": "85LM",
+            "Beam Angle": "40 Degree"
+          },
+          "MECHANICAL DATA": {
+            "Net weight": "12g",
+            "IP Rating": "N/A",
+            "Material": "Polycarbonate",
+            "Available Colors": "Cool / Warm / Red / Green / Blue / Pink"
+          }
+        },
+        "category": "Spot Lights",
+        "modelCode": "ATM2",
+        "shapes": "Round ",
+        "warranty": "1 Year",
+        "mrp": "₹200",
+        "wattage": "2W"
+      }
+    ]
+  },
+  {
+    "id": "4949",
+    "slug": "junction-lights-2",
+    "name": "Junction Lights",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Junction-Lights_Mikron-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Junction-Lights_Mikron-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5070",
+    "slug": "mini-surface-lights",
+    "name": "Mini Surface Lights",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Mini-Surface-Lights_Nano-Z_new-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Mini-Surface-Lights_Nano-Z_new-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5073",
+    "slug": "bulkheads-lights",
+    "name": "Bulkheads Lights",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Led-Bulkheads_Minion_10W-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Led-Bulkheads_Minion_10W-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5075",
+    "slug": "surface-panel-lights",
+    "name": "Surface Panel Lights",
+    "categoryGroup": "Indoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/neo-6w-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/neo-6w-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5079",
+    "slug": "strip-lights",
+    "name": "Strip Lights",
+    "categoryGroup": "Decorative & Landscape",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Led-Strip-Lights_Linea_60-1024x1024.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Led-Strip-Lights_Linea_60-1024x1024.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5081",
+    "slug": "wall-lights-up-down-lights",
+    "name": "Wall Lights / Up-Down Lights",
+    "categoryGroup": "Decorative & Landscape",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5218",
+    "slug": "flood-lights-series",
+    "name": "Flood Lights Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Flood-Lights_Zeus10-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Flood-Lights_Zeus10-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5220",
+    "slug": "flood-lights-hi-lum-series",
+    "name": "Flood Lights Hi-LUM series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Flood-Lights_Hi-Lum_50w-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Flood-Lights_Hi-Lum_50w-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5223",
+    "slug": "street-light-series",
+    "name": "Street Light Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Genxt_20w-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Genxt_20w-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5225",
+    "slug": "street-light-automatic-series",
+    "name": "Street Light Automatic Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Automatic-Street-Lights_Dynamic_25w-1024x1024.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/09/Automatic-Street-Lights_Dynamic_25w-1024x1024.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5227",
+    "slug": "street-light-economic-series",
+    "name": "Street Light Economic Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Ekon_24w-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Ekon_24w-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5983",
+    "slug": "essentials",
+    "name": "Essentials",
+    "categoryGroup": "Essentials",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Topsy-6-Inch-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Topsy-6-Inch-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "5985",
+    "slug": "classic",
+    "name": "Classic",
+    "categoryGroup": "Essentials",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Vivo-7-Inch-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Vivo-7-Inch-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "6735",
+    "slug": "street-light-series-2",
+    "name": "Street Light Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Genxt_50w-1024x1024.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Street-Light_Genxt_50w-1024x1024.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "6740",
+    "slug": "flood-lights-series-2",
+    "name": "Flood Lights Series",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Flood-Lights_ECO50-1024x1024.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Flood-Lights_ECO50-1024x1024.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "6746",
+    "slug": "essentials-2",
+    "name": "Essentials",
+    "categoryGroup": "Essentials",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Crystal-Neo-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Gate-Lights_Crystal-Neo-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "6756",
+    "slug": "classic-2",
+    "name": "Classic",
+    "categoryGroup": "Essentials",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Gate-Lights_Flora-7-Inch-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Gate-Lights_Flora-7-Inch-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "6763",
+    "slug": "classic-3",
+    "name": "Classic",
+    "categoryGroup": "Essentials",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Gate-Lights_Arrow-8-inch-1024x1024.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/11/Gate-Lights_Arrow-8-inch-1024x1024.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "7535",
+    "slug": "economic-wall-lights",
+    "name": "Economic Wall Lights",
+    "categoryGroup": "Decorative & Landscape",
+    "image_url": "",
+    "gallery": [],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  },
+  {
+    "id": "7677",
+    "slug": "bulkheads-fixtures",
+    "name": "Bulkheads",
+    "categoryGroup": "Outdoor Lighting",
+    "image_url": "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Bulkheads_Fin-scaled-1.jpg",
+    "gallery": [
+      "https://aimyindia.meoun.com/wp-content/uploads/2022/10/Bulkheads_Fin-scaled-1.jpg"
+    ],
+    "models": [
+      {
+        "wattage": "Various Options",
+        "warranty": "1-2 Years",
+        "specs": {}
+      }
+    ]
+  }
+]

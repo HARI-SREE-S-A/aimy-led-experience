@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import { useScrollStore } from '../scroll/store';
 import { chapters, brand } from '../content/chapters';
 
@@ -53,9 +54,9 @@ export function Overlay() {
           <div className="brand-bar__logo-dot" />
           {brand.name}
         </div>
-        <a href={brand.legacyUrl} className="brand-bar__legacy">
-          Back to Main Site
-        </a>
+        <Link to="/products" className="brand-bar__legacy">
+          View Catalog
+        </Link>
       </header>
 
       <nav className="progress-rail">
