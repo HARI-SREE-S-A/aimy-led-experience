@@ -133,11 +133,9 @@ img {
   pointer-events: auto;
   max-width: 520px;
   padding: 2.25rem 2.5rem;
-  background: var(--bg-glass);
+  background: rgba(10, 10, 10, 0.90);
   border: 1px solid var(--hairline);
   border-radius: 18px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
@@ -530,9 +528,7 @@ img {
 
 .page-container {
   min-height: 100vh;
-  background: rgba(5, 5, 5, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(5, 5, 5, 0.9);
   padding-top: 6rem;
   padding-bottom: 4rem;
   z-index: 10;
@@ -583,8 +579,7 @@ img {
 }
 
 .product-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(14px);
+  background: rgba(10, 10, 10, 0.9);
   border: 1px solid var(--hairline);
   border-radius: 12px;
   overflow: hidden;
@@ -767,8 +762,7 @@ img {
 
 .spec-table-wrapper {
   overflow-x: auto;
-  background: var(--bg-glass);
-  backdrop-filter: blur(20px);
+  background: rgba(10, 10, 10, 0.9);
   border-radius: 16px;
   border: 1px solid var(--hairline-strong);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 20px 50px rgba(0,0,0,0.5);

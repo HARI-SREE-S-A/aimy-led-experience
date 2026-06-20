@@ -19,7 +19,9 @@ export function Scene({ isAmbient }) {
   if (isMobile === null) return null;
 
   const particleCount = isMobile ? 600 : 8000;
-  const dpr = isMobile ? [1, 1] : [1, 2];
+  // Force DPR to 1 on ALL devices. High-DPI displays (like 4K monitors or Macbooks) 
+  // rendering 8000 particles at 4x MSAA + mipmap bloom will instantly kill the GPU.
+  const dpr = [1, 1];
 
   return (
     <Canvas

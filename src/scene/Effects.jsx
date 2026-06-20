@@ -12,12 +12,11 @@ export function Effects({ isMobile }) {
   }
 
   return (
-    <EffectComposer disableNormalPass multisampling={4}>
+    <EffectComposer disableNormalPass multisampling={0}>
       <Bloom 
         luminanceThreshold={0.2} 
         luminanceSmoothing={0.9} 
         intensity={2.5} 
-        mipmapBlur 
       />
       <ChromaticAberration 
         offset={new Vector2(0.0015, 0.0015)} 
