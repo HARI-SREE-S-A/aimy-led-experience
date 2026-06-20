@@ -3,6 +3,7 @@
 // Fragment: dome highlight + chasing-light band + palette per chapter.
 
 export const ledVertexShader = /* glsl */ `
+  attribute vec3 aPanelPos;
   attribute vec3 aTargetA;
   attribute vec3 aTargetB;
   attribute float aIndex;
@@ -28,18 +29,21 @@ export const ledVertexShader = /* glsl */ `
     // Smoothly blend targetA -> targetB for chapter transitions
     vec3 target = mix(aTargetA, aTargetB, uMorphB);
 
-    // Base position is the panel grid; we morph toward target
+    // Base instance position is the panel grid; we morph toward target
     // by uMorphA. We always keep a tiny bit of the panel for visual anchor.
-    vec3 pos = mix(position * uSize, target, uMorphA);
+    vec3 instancePos = mix(aPanelPos, target, uMorphA);
+
+    // Brief explosion outward at the moment of chapter transition
+    float burst = sin(uMorphB * 3.14159) * uDispersion;
+    instancePos += normalize(target - aPanelPos) * burst * 0.3;
+
+    // The final vertex position is the instance position PLUS the scaled icosahedron vertex
+    vec3 pos = instancePos + (position * uSize);
 
     // Per-particle shimmer driven by time + index
     float n = hash(aIndex) * 6.2831853;
     float shimmer = sin(uTime * 1.6 + n) * 0.5 + cos(uTime * 0.7 + n * 1.7) * 0.5;
     pos += normal * shimmer * 0.08;
-
-    // Brief explosion outward at the moment of chapter transition
-    float burst = sin(uMorphB * 3.14159) * uDispersion;
-    pos += normalize(target - position) * burst * 0.3;
 
     // Local Y for hue mixing (which "row" of the panel is this particle on)
     vLocalY = clamp(target.y / 5.0, -1.0, 1.0);
@@ -48,7 +52,7 @@ export const ledVertexShader = /* glsl */ `
     vWorldPos = worldPosition.xyz;
     vIndex = aIndex;
     vRandom = aRandom;
-    vDistanceFromTarget = length(target - pos);
+    vDistanceFromTarget = length(target - instancePos);
 
     gl_Position = projectionMatrix * viewMatrix * worldPosition;
   }

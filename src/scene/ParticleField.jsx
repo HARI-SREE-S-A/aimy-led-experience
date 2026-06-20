@@ -49,7 +49,7 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
       position[i * 3 + 1] = (r - cols / 2) * spacing;
       position[i * 3 + 2] = 0;
     }
-    geo.setAttribute('position', new THREE.BufferAttribute(position, 3));
+    geo.setAttribute('aPanelPos', new THREE.InstancedBufferAttribute(position, 3));
 
     const indexes = new Float32Array(particleCount);
     const randoms = new Float32Array(particleCount);
@@ -57,8 +57,8 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
       indexes[i] = i;
       randoms[i] = Math.random();
     }
-    geo.setAttribute('aIndex', new THREE.BufferAttribute(indexes, 1));
-    geo.setAttribute('aRandom', new THREE.BufferAttribute(randoms, 1));
+    geo.setAttribute('aIndex', new THREE.InstancedBufferAttribute(indexes, 1));
+    geo.setAttribute('aRandom', new THREE.InstancedBufferAttribute(randoms, 1));
 
     // Two target slots — A and B. We swap them on the fly as the user
     // scrolls between chapters, so we never have to reallocate.
@@ -69,8 +69,8 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
     const targetB = new Float32Array(
       allTargets.subarray(0, particleCount * 3)
     );
-    geo.setAttribute('aTargetA', new THREE.BufferAttribute(targetA, 3));
-    geo.setAttribute('aTargetB', new THREE.BufferAttribute(targetB, 3));
+    geo.setAttribute('aTargetA', new THREE.InstancedBufferAttribute(targetA, 3));
+    geo.setAttribute('aTargetB', new THREE.InstancedBufferAttribute(targetB, 3));
 
     // Stash the master buffer on the geometry so the useFrame closure
     // can read it without re-deriving it.
