@@ -1,0 +1,521 @@
+/* ============================================================
+   Aimy India — LED Experience
+   Dark cinematic theme tokens
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+  /* Background tones — deeper than the legacy site */
+  --bg: #050505;
+  --bg-elevated: #0a0a0a;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-strong: rgba(255, 255, 255, 0.08);
+
+  /* Brand */
+  --brand: #e31e24;
+  --brand-dark: #c41920;
+  --brand-glow: rgba(227, 30, 36, 0.45);
+  --brand-soft: rgba(227, 30, 36, 0.12);
+
+  /* Text */
+  --fg: #ffffff;
+  --fg-muted: #a8a8a8;
+  --fg-dim: #6b6b6b;
+  --fg-faint: #404040;
+
+  /* Accents */
+  --accent-gold: #d4a853;
+  --accent-ice: #7cc8ff;
+  --accent-warm: #ffe9b0;
+
+  /* Borders */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-strong: rgba(255, 255, 255, 0.16);
+
+  /* Type */
+  --font: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+body {
+  min-height: 100vh;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================================
+   Page structure
+   ============================================================ */
+
+.app {
+  position: relative;
+  width: 100%;
+}
+
+.scene-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--bg);
+}
+
+/* The scroll spacer is invisible but sets the page height.
+   It must be tall enough that scroll progress maps cleanly to
+   each chapter. 8 chapters × 100vh = 800vh. */
+.scroll-spacer {
+  position: relative;
+  width: 100%;
+  height: 800vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.chapter {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 6vw;
+  pointer-events: none;
+}
+
+.chapter--right {
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 8rem; /* Avoid progress rail overlap */
+}
+
+.chapter--left {
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.chapter--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.chapter__card {
+  pointer-events: auto;
+  max-width: 520px;
+  padding: 2.25rem 2.5rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.chapter__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 1rem;
+}
+
+.chapter__eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--brand);
+  display: inline-block;
+}
+
+.chapter__title {
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem 0;
+  color: var(--fg);
+}
+
+.chapter__title em {
+  font-style: normal;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.chapter__lede {
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  font-weight: 300;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+}
+
+.chapter__body {
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+}
+
+.chapter__stats {
+  display: flex;
+  gap: 2.25rem;
+  margin: 1.75rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chapter__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter__stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.chapter__stat-value span {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.chapter__stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--fg-dim);
+  margin-top: 0.25rem;
+}
+
+.chapter__bullets {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.5rem;
+  text-align: left; /* Ensure bullets don't drift in right-aligned chapters */
+}
+
+.chapter__bullets li {
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+.chapter__bullets li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: var(--brand);
+  font-size: 0.65rem;
+}
+
+.chapter__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 30px var(--brand-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chapter__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 40px var(--brand-glow);
+}
+
+.chapter__cta--ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: none;
+}
+
+.chapter__cta--ghost:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: 0 0 24px var(--brand-soft);
+}
+
+/* ============================================================
+   Top brand bar (fixed)
+   ============================================================ */
+
+.brand-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.brand-bar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  pointer-events: auto;
+}
+
+.brand-bar__logo-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 14px var(--brand-glow), 0 0 4px var(--brand);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(0.85); }
+}
+
+.brand-bar__legacy {
+  pointer-events: auto;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--hairline-strong);
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.brand-bar__legacy:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* ============================================================
+   Right rail: chapter progress
+   ============================================================ */
+
+.progress-rail {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  pointer-events: auto;
+}
+
+.progress-rail__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--fg-faint);
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.progress-rail__item.is-active {
+  color: var(--fg);
+}
+
+.progress-rail__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--fg-faint);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.progress-rail__item.is-active .progress-rail__dot {
+  background: var(--brand);
+  border-color: var(--brand);
+  box-shadow: 0 0 10px var(--brand-glow);
+  transform: scale(1.2);
+}
+
+.progress-rail__label {
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.progress-rail__item:hover .progress-rail__label,
+.progress-rail__item.is-active .progress-rail__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================================
+   Boot screen (pre-WebGL)
+   ============================================================ */
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.boot.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot__logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.boot__bar {
+  width: 220px;
+  height: 2px;
+  background: var(--fg-faint);
+  position: relative;
+  overflow: hidden;
+}
+
+.boot__bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand);
+  box-shadow: 0 0 12px var(--brand-glow);
+  transform: translateX(-100%);
+  animation: bootSlide 1.4s ease-in-out infinite;
+}
+
+@keyframes bootSlide {
+  0%   { transform: translateX(-100%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.boot__hint {
+  font-size: 0.7rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================================
+   Mobile
+   ============================================================ */
+
+@media (max-width: 720px) {
+  .chapter {
+    padding: 0 5vw;
+  }
+  .chapter__card {
+    max-width: 100%;
+    padding: 1.5rem 1.5rem;
+    border-radius: 14px;
+  }
+  .chapter__stats {
+    gap: 1.25rem;
+  }
+  .progress-rail {
+    right: 0.85rem;
+  }
+  .progress-rail__label {
+    display: none;
+  }
+  .brand-bar {
+    padding: 1rem 1.25rem;
+  }
+  .brand-bar__legacy {
+    display: none;
+  }
+}
