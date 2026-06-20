@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import products from '../data/products.json';
 import ProductSpecTable from './ProductSpecTable';
@@ -6,6 +6,28 @@ import ProductSpecTable from './ProductSpecTable';
 export default function ProductDetail() {
   const { slug } = useParams();
   const product = products.find(p => p.slug === slug);
+
+  // Collect all unique images for the gallery
+  const allImages = useMemo(() => {
+    if (!product) return [];
+    const imgs = [];
+    if (product.image_url) imgs.push(product.image_url);
+    if (product.gallery && product.gallery.length > 0) {
+      product.gallery.forEach(img => {
+        if (!imgs.includes(img)) imgs.push(img);
+      });
+    }
+    if (imgs.length === 0) imgs.push('/woocommerce-placeholder.png');
+    return imgs;
+  }, [product]);
+
+  const [activeImage, setActiveImage] = useState(allImages[0]);
+
+  useEffect(() => {
+    if (allImages.length > 0) {
+      setActiveImage(allImages[0]);
+    }
+  }, [allImages]);
 
   if (!product) {
     return (
@@ -32,15 +54,20 @@ export default function ProductDetail() {
           <div className="product-gallery">
             <div className="product-gallery__main">
               <img 
-                src={product.gallery && product.gallery.length > 0 ? product.gallery[0] : product.image_url || '/woocommerce-placeholder.png'} 
+                src={activeImage} 
                 alt={product.name}
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/600x600?text=No+Image'; }}
               />
             </div>
-            {product.gallery && product.gallery.length > 1 && (
+            {allImages.length > 1 && (
               <div className="product-gallery__thumbs">
-                {product.gallery.slice(1).map((imgUrl, idx) => (
-                  <div key={idx} className="product-gallery__thumb">
+                {allImages.map((imgUrl, idx) => (
+                  <div 
+                    key={idx} 
+                    className={`product-gallery__thumb ${activeImage === imgUrl ? 'active' : ''}`}
+                    onClick={() => setActiveImage(imgUrl)}
+                    style={{ borderColor: activeImage === imgUrl ? 'var(--brand)' : 'transparent' }}
+                  >
                     <img 
                       src={imgUrl} 
                       alt={`${product.name} thumbnail ${idx + 1}`} 

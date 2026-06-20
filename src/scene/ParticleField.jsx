@@ -142,27 +142,19 @@ export function ParticleField({ chapters, particleCount = 8000, isAmbient, isMob
     const nextChapter = Math.min(chapter + 1, chapters.length - 1);
     const hasNext = nextChapter !== chapter;
 
-    // Swap target buffers based on which chapter the user is in.
-    // We do this in a single half of the chapter so the shader can
-    // smoothly blend A→B from chapterProgress 0.5 to 1.0.
-    const attrA = mesh.geometry.getAttribute('aTargetA');
-    const attrB = mesh.geometry.getAttribute('aTargetB');
-    const allTargets = mesh.geometry.userData.allTargets;
+    // PERFORMANCE FIX: Only upload geometry targets to the GPU when the chapter actually changes!
+    // Uploading every frame was causing mobile devices to hang and overheat.
+    if (mesh.userData.lastChapter !== chapter || mesh.userData.lastNextChapter !== nextChapter) {
+      const attrA = mesh.geometry.getAttribute('aTargetA');
+      const attrB = mesh.geometry.getAttribute('aTargetB');
+      const allTargets = mesh.geometry.userData.allTargets;
 
-    attrA.array.set(
-      allTargets.subarray(
-        chapter * particleCount * 3,
-        (chapter + 1) * particleCount * 3
-      )
-    );
-    attrB.array.set(
-      allTargets.subarray(
-        nextChapter * particleCount * 3,
-        (nextChapter + 1) * particleCount * 3
-      )
-    );
-    attrA.needsUpdate = true;
-    attrB.needsUpdate = true;
+      attrA.array.set(allTargets.subarray(chapter * particleCount * 3, (chapter + 1) * particleCount * 3));
+      attrB.array.set(allTargets.subarray(nextChapter * particleCount * 3, (nextChapter + 1) * particleCount * 3));
+      attrA.needsUpdate = true;
+      attrB.needsUpdate = true;
+      mesh.userData.lastChapter = chapter;
+    }
 
     const morphA = isAmbient ? 1.0 : smoothstep(0.0, 0.15, chapterProgress);
     const morphB = (hasNext && !isAmbient) ? smoothstep(0.5, 1.0, chapterProgress) : 0.0;
